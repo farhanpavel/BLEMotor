@@ -171,12 +171,12 @@ const BLEMotorController = () => {
       Animated.sequence([
         Animated.timing(pulseAnim, {
           toValue: 1.2,
-          duration: 50,
+          duration: 100,
           useNativeDriver: true,
         }),
         Animated.timing(pulseAnim, {
           toValue: 1,
-          duration: 50,
+          duration: 100,
           useNativeDriver: true,
         }),
       ]).start();
@@ -188,7 +188,7 @@ const BLEMotorController = () => {
           await characteristic.writeWithResponse(base64.encode("0"));
           console.log("Pulse OFF");
           setIsPulsing(false);
-        }, 400); // 0.1 seconds
+        }, 500); // 0.1 seconds
       } catch (error) {
         console.error("Pulse error:", error);
         setIsPulsing(false);
