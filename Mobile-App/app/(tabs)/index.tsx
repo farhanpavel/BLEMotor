@@ -188,7 +188,7 @@ const BLEMotorController = () => {
           await characteristic.writeWithResponse(base64.encode("0"));
           console.log("Pulse OFF");
           setIsPulsing(false);
-        }, 100); // 0.1 seconds
+        }, 400); // 0.1 seconds
       } catch (error) {
         console.error("Pulse error:", error);
         setIsPulsing(false);
